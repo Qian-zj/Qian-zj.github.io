@@ -13,10 +13,10 @@ jobs:
         node-version: [10.x]
 
     steps:
-      - name: 開始運行
+      - name: 开始运行
         uses: actions/checkout@v1
 
-      - name: 設置 Node.js ${{ matrix.node-version }}
+      - name: 设置 Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
@@ -40,7 +40,7 @@ jobs:
 
       - name: 部署博客
         run: |
-          hexo clean && hexo g && hexo douban && npm install gulp -g && gulp
+          hexo clean && hexo g && hexo douban && npm install --g gulp-cli && gulp
           cd ./public
           git init
           git config user.name "${{secrets.GIT_NAME}}"
