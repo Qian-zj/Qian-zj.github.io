@@ -40,7 +40,7 @@ jobs:
 
       - name: 部署博客
         run: |
-          hexo clean && hexo g && hexo douban && npm install --g gulp-cli && gulp
+          hexo clean && hexo g && hexo douban && npm install --g gulp-cli && npm link gulp && gulp
           cd ./public
           git init
           git config user.name "${{secrets.GIT_NAME}}"
